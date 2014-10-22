@@ -1,0 +1,38 @@
+$(document).ready(function(){
+  var total_score=0
+
+  activate = function(element){
+    $(".question").removeClass("active");
+    $(".result").removeClass("active");
+    element.addClass("active");
+  }
+
+  process_result = function(){
+    if (total_score >= 10 && total_score <= 15)
+      $result = $("#tiger");
+    else if (total_score >= 16 && total_score <= 22)
+      $result = $("#collie");
+    else if (total_score >= 23 && total_score <= 30)
+      $result = $("#kangaroo");
+    else
+      alert("are you alien?")
+    activate($result);
+  }
+
+  q_tpl = _.template($('#q_tpl').html())({datas: questions});
+  $("#questions").append(q_tpl);
+  r_tpl = _.template($('#r_tpl').html())({datas: result});
+  $("#result").append(r_tpl);
+
+  $("input[type='radio']").on("click",function(){
+    total_score = total_score + parseInt(this.value);
+    num = $(this).data("serial-num")+1;
+    $question = $("#question-"+num)
+    if($question.length==0) {
+      process_result()
+    } else {
+      activate($question)
+    }
+  });
+
+})

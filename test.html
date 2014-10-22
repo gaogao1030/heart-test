@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="./assets/javascript/underscore.min.js"></script>
+    <script type="text/javascript" src="./assets/javascript/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./assets/javascript/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./assets/javascript/data.js"></script>
+    <script type="text/javascript" src="./assets/javascript/heart-test.js"></script>
+    <link href="./assets/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="./assets/stylesheets/heart-test.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container-fluid" id="questions"></div>
+    <div class="container-fluid" id="result"></div>
+    <div class="reset">
+      <button type="button" class="btn btn-danger">重新测试</button>
+    </div>
+  </body>
+  <script type="text/template" id="q_tpl">
+    <% _.each(datas,function(data) { %>
+      <% if(data.num == 1){ %>
+        <div class="question active" id="question-<%= data.num%>">
+      <% } else { %>
+        <div class="question" id="question-<%= data.num%>">
+      <% } %>
+          <h5> <%= data.num %>.<%= data.question %> </h5>
+          <div class="answer-list">
+            <% _.each(data.answers,function(answer) { %>
+               <div class="answer">
+                 <img src = <%= answer.src %> >
+                 <input type="radio" data-serial-num= <%= data.num%> value= <%= answer.value %>><span class="des" ><%= answer.des %></span></input>
+               </div>
+             <% }); %>
+          </div>
+         </div>
+    <% }); %>
+  </script>
+
+  <script type="text/template" id="r_tpl">
+    <% _.each(datas,function(data) { %>
+      <div id=<%= data.type %> class="result" >
+        <p><%= data.detail %></p>
+      </div>
+    <% }); %>
+  </script>
+</html>
