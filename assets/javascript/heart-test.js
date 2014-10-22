@@ -2,10 +2,18 @@ $(document).ready(function(){
   var total_score=0
 
   activate = function(element){
-    $(".question").removeClass("active");
-    $(".result").removeClass("active");
-    element.addClass("active");
+    $(".question").addClass("hidden");
+    element.removeClass("hidden");
   }
+
+  $("#start").on("click",function(){
+    $("#question").addClass("hidden");
+    $("#questions").removeClass("hidden");
+    $("#question-1").removeClass("hidden");
+    $("#reset").removeClass("hidden");
+    $("#cover").addClass("hidden");
+    $(this).addClass("hidden");
+  })
 
   process_result = function(){
     if (total_score >= 10 && total_score <= 15)

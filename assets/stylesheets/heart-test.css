@@ -1,3 +1,7 @@
+body {
+  background-color:#fffff7;
+}
+
 .answer-list {
   text-align:left;
 }
@@ -17,23 +21,19 @@ span.des {
   font-size:30px;
 }
 
-.question {
-  display:none;
-}
-
-.question.active {
+.active {
   display:block;
 }
 
-
-.result {
+.hidden {
   display:none;
+  position:absolute;
 }
 
-.result.active {
-  display:block;
-}
-
-.reset {
+.button {
   text-align:center;
+}
+
+.container-fluid {
+  margin: 100px 0 0 0;
 }

@@ -10,19 +10,23 @@
     <link href="./assets/stylesheets/heart-test.css" rel="stylesheet">
   </head>
   <body>
-    <div class="container-fluid" id="questions"></div>
-    <div class="container-fluid" id="result"></div>
-    <div class="reset">
+    <div class="container-fluid" id="cover">
+      <p>
+        每个家庭、每个人心里，都有着不同的家长与子女的相处方式，严厉的父母和温柔的父母，到底哪一种对孩子来说才是最好的父母？先来测一测你是哪种类型的家长？
+      </p>
+    </div>
+    <div class="container-fluid hidden" id="questions"></div>
+    <div class="container-fluid hidden" id="result"></div>
+    <div id="start" class="button">
+      <button type="button" class="btn btn-danger">开始测试</button>
+    </div>
+    <div id="reset" class="hidden button">
       <button type="button" class="btn btn-danger">重新测试</button>
     </div>
   </body>
   <script type="text/template" id="q_tpl">
     <% _.each(datas,function(data) { %>
-      <% if(data.num == 1){ %>
-        <div class="question active" id="question-<%= data.num%>">
-      <% } else { %>
-        <div class="question" id="question-<%= data.num%>">
-      <% } %>
+        <div class="question hidden" id="question-<%= data.num%>">
           <h5> <%= data.num %>.<%= data.question %> </h5>
           <div class="answer-list">
             <% _.each(data.answers,function(answer) { %>
@@ -38,7 +42,7 @@
 
   <script type="text/template" id="r_tpl">
     <% _.each(datas,function(data) { %>
-      <div id=<%= data.type %> class="result" >
+      <div id=<%= data.type %> class="result hidden" >
         <p><%= data.detail %></p>
       </div>
     <% }); %>
