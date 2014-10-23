@@ -14,20 +14,50 @@ questions =
   },
   {"num":"3","question":"你喜欢回忆以前的事情吗?","answers":[
      {"des":"不确定","src":"./assets/images/不确定.png","value": 1},
-     {"des":"yes","src":"./assets/images/yes.png","value": 2},
-     {"des":"no","src":"./assets/images/no.png","value": 3}
+     {"des":"Yes","src":"./assets/images/Yes.png","value": 2},
+     {"des":"No","src":"./assets/images/No.png","value": 3}
    ]
   },
   {"num":"4","question":"你常常很希望周围的人能够服从你?","answers":[
      {"des":"偶尔","src":"./assets/images/偶尔.png","value": 1},
-     {"des":"no","src":"./assets/images/no.png","value": 2},
-     {"des":"yes","src":"./assets/images/yes.png","value": 3}
+     {"des":"No","src":"./assets/images/No.png","value": 2},
+     {"des":"Yes","src":"./assets/images/Yes.png","value": 3}
    ]
   },
   {"num":"5","question":"如果你有一个中学的弟弟，你会送她什么东西作为生日礼物?","answers":[
      {"des":"让他自己选","src":"./assets/images/自主选择.png","value": 1},
      {"des":"游戏","src":"./assets/images/游戏.png","value": 2},
      {"des":"动画片","src":"./assets/images/动画片.png","value": 3}
+   ]
+  },
+  {"num":"6","question":"你喜欢养宠物吗?","answers":[
+     {"des":"不确定","src":"./assets/images/不确定.png","value": 1},
+     {"des":"Yes","src":"./assets/images/Yes.png","value": 2},
+     {"des":"No","src":"./assets/images/No.png","value": 3}
+   ]
+  },
+  {"num":"7","question":"你是个喜欢独自呆在安静环境里的人吗?","answers":[
+     {"des":"Yes","src":"./assets/images/Yes.png","value": 1},
+     {"des":"No","src":"./assets/images/No.png","value": 2},
+     {"des":"不确定","src":"./assets/images/不确定.png","value": 3}
+   ]
+  },
+  {"num":"8","question":"在家人眼里你是一个比较独立的人吗?","answers":[
+     {"des":"No","src":"./assets/images/No.png","value": 1},
+     {"des":"Yes","src":"./assets/images/Yes.png","value": 2},
+     {"des":"不确定","src":"./assets/images/不确定.png","value": 3}
+   ]
+  },
+  {"num":"9","question":"如果你要点缀自己的房间,你会选择以下哪种物品?","answers":[
+     {"des":"挂画","src":"./assets/images/挂画.png","value": 1},
+     {"des":"灯饰","src":"./assets/images/灯饰.png","value": 2},
+     {"des":"花瓶和花","src":"./assets/images/花瓶和花.png","value": 3}
+   ]
+  },
+  {"num":"10","question":"看感人的影片时,你会很容易落泪?","answers":[
+     {"des":"No","src":"./assets/images/No.png","value": 1},
+     {"des":"有时","src":"./assets/images/有时.png","value": 2},
+     {"des":"Yes","src":"./assets/images/Yes.png","value": 3}
    ]
   },
 ]
