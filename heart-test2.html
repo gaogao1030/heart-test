@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="./assets/javascript/underscore.min.js"></script>
+    <script type="text/javascript" src="./assets/javascript/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./assets/javascript/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./assets/javascript/data.js"></script>
+    <script type="text/javascript" src="./assets/javascript/heart-test2.js"></script>
+    <link href="./assets/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="./assets/stylesheets/heart-test2.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class="cover part" id="part1">
+      <button id="start" type="button" class="btn btn-danger">开始测试</button>
+    </div>
+    <div class="question hidden part" id="part2">
+      <div class="container-fluid" id="question_list">
+        <p>
+          你乘坐的飞机有故障，机长发你一个降落伞包，下面有六个岛屿可以降落，只有一次机会，但在这个岛上生活的时间会比较久，你希望选择哪一个？要知道，这些岛屿相对封闭和遥远，一旦到达，将很少有机会能和外界联系，更换岛屿生活更是不可能。
+        </p>
+        <p>
+        唯一的要求是你必须要在这个岛上和岛上的居民一起生活至少半年的时间。请不要考虑其他因素，仅凭自己的兴趣挑出你最想前往的岛屿，<b>请选出你最想降落的岛屿。<a id="next_page" href="javascript:void(0)">(下一页)</a> </b>
+        </p>
+      </div>
+    </div>
+    <div class="answer-area hidden part" id="part3">
+      <div class="answer-container">
+        <div id="answer-list"></div>
+        <h2>我选择的岛屿是</h2>
+        <div id="choice-list">
+        </div>
+       </div>
+    </div>
+    <div class = "result-area hidden part" id="part4">
+      <div class = "result-container">
+        <div id="result-list">
+        </div>
+     </div>
+
+    </div>
+  </body>
+  <script type="text/template" id="island_tpl">
+    <% _.each(islands,function(island){ %>
+      <h3><%= island.title %></h3>
+      <p><%= island.describe %></p>
+    <% }); %>
+  </script>
+
+  <script type="text/template" id="choice_tpl">
+    <% _.each(islands,function(island){ %>
+      <div class="choice">
+        <input type="radio" data-serial-num=<%= island.num %>>
+        <span class="des"><%= island.title%></span>
+      </div>
+    <% }); %>
+  </script>
+
+  <script type="text/template" id="result_tpl">
+    <% _.each(results,function(result){ %>
+      <div class="result" id="result-<%=result.num %>">
+        <h3><%= result.title%></h3>
+        <div class="sub-title">
+          <div class="line"></div><%= result.sub_title %>
+        </div>
+        <ul>
+          <% _.each(result.features,function(feature){ %>
+            <li><%= feature %></li>
+          <% }); %>
+        </ul>
+        <h3>适合的工作</h3>
+        <ul>
+          <% _.each(result.work_types,function(wt){ %>
+            <li><%= wt %></li>
+          <% }); %>
+        </ul>
+      </div>
+    <% }); %>
+  </script>
+
+</html>
