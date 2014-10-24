@@ -126,6 +126,8 @@ input[type="radio"] {
 .result-container {
   width:90%;
   margin:0 auto;
+  height:90%;
+  overflow:auto;
 }
 
 .result {
@@ -134,8 +136,10 @@ input[type="radio"] {
 
 .sub-title {
   margin: 0 0 20px 0;
+  font-size:22px;
 }
 
 ul > li {
   margin:10px 0 10px 0;
+  font-size:20px;
 }

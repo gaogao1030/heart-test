@@ -12,15 +12,17 @@
   </head>
   <body>
     <div class="container-fluid" id="cover">
-      <p>
-        每个家庭、每个人心里，都有着不同的家长与子女的相处方式，严厉的父母和温柔的父母，到底哪一种对孩子来说才是最好的父母？先来测一测你是哪种类型的家长？
-      </p>
+      <div class="text-content">
+        <p align="justify">
+          每个家庭、每个人心里，都有着不同的家长与子女的相处方式，严厉的父母和温柔的父母，到底哪一种对孩子来说才是最好的父母？先来测一测你是哪种类型的家长？
+        </p>
+      </div>
+      <div id="start" class="button">
+        <button type="button" class="btn btn-danger">开始测试</button>
+      </div>
     </div>
     <div class="container-fluid hidden" id="question-list"></div>
     <div class="container-fluid hidden" id="result-list"></div>
-    <div id="start" class="button">
-      <button type="button" class="btn btn-danger">开始测试</button>
-    </div>
     <div id="reset" class="hidden button">
       <button type="button" class="btn btn-danger">重新测试</button>
     </div>
@@ -28,7 +30,7 @@
   <script type="text/template" id="q_tpl">
     <% _.each(datas,function(data) { %>
         <div class="question hidden" id="question-<%= data.num%>">
-          <h5> <%= data.num %>.<%= data.question %> </h5>
+          <div class="question-des"> <%= data.num %>.<%= data.question %> </div>
           <div class="answer-list">
             <% _.each(data.answers,function(answer) { %>
                <div class="answer">
@@ -44,7 +46,12 @@
   <script type="text/template" id="r_tpl">
     <% _.each(datas,function(data) { %>
       <div id=<%= data.type %> class="result hidden" >
-        <p><%= data.detail %></p>
+        <div class="animal">
+          <img src= <%= data.src%>>
+        </div>
+        <div class= "result-describe">
+          <p align="justify"><%= data.detail %></p>
+        </div>
       </div>
     <% }); %>
   </script>

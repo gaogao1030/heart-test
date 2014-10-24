@@ -1,6 +1,13 @@
 $(document).ready(function(){
   var total_score=0
 
+  $("#start > button").css("position","absolute");
+  $("#start > button").css("left",$(window).width()/2-60);
+  $(window).resize(function(){
+    $("#start > button").css("position","absolute");
+    $("#start > button").css("left",$(window).width()/2-60);
+  });
+
   activate = function(element){
     $(".question").addClass("hidden");
     element.removeClass("hidden");
@@ -34,14 +41,17 @@ $(document).ready(function(){
   $("#result-list").append(r_tpl);
 
   $("input[type='radio']").on("click",function(){
-    total_score = total_score + parseInt(this.value);
-    num = $(this).data("serial-num")+1;
-    $question = $("#question-"+num)
-    if($question.length==0) {
-      process_result()
-    } else {
-      activate($question)
-    }
+    _this = this
+    setTimeout(function(){
+      total_score = total_score + parseInt(_this.value);
+      num = $(_this).data("serial-num")+1;
+      $question = $("#question-"+num)
+      if($question.length==0) {
+        process_result()
+      } else {
+        activate($question)
+      }
+    },100);
   });
 
   $("#reset").on("click",function(){
