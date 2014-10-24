@@ -20,8 +20,8 @@ $(document).ready(function(){
 
   island_tpl = _.template($('#island_tpl').html())(islands);
   $("#answer-list").append(island_tpl);
-  choice_tpl = _.template($('#choice_tpl').html())(islands);
-  $("#choice-list").append(choice_tpl);
+//  choice_tpl = _.template($('#choice_tpl').html())(islands);
+//  $("#choice-list").append(choice_tpl);
   result_tpl = _.template($('#result_tpl').html())({results:result2});
   $("#result-list").append(result_tpl);
 

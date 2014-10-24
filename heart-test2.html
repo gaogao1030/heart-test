@@ -27,9 +27,8 @@
     <div class="answer-area hidden part" id="part3">
       <div class="answer-container">
         <div id="answer-list"></div>
-        <h2>我选择的岛屿是</h2>
-        <div id="choice-list">
-        </div>
+     <!--<h2>我选择的岛屿是</h2>
+         <div id="choice-list"></div> -->
        </div>
     </div>
     <div class = "result-area hidden part" id="part4">
@@ -45,6 +44,15 @@
       <h3><%= island.title %></h3>
       <p><%= island.describe %></p>
     <% }); %>
+      <h2>我选择的岛屿是</h2>
+      <div id="choice-list">
+         <% _.each(islands,function(island){ %>
+           <div class="choice">
+             <input type="radio" data-serial-num=<%= island.num %>>
+             <span class="des"><%= island.title%></span>
+           </div>
+         <% }); %>
+      </div>
   </script>
 
   <script type="text/template" id="choice_tpl">

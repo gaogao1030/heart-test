@@ -93,7 +93,7 @@ h2 {
 }
 
 #answer-list {
-  height:50%;
+  height:80%;
   overflow:auto;
   font-size:22px;
   letter-spacing:2px;
@@ -104,10 +104,10 @@ h2 {
   margin:30px auto;
 }
 
-#choice-list {
-  height:30%;
-  overflow:auto;
-}
+//#choice-list {
+//  height:30%;
+//  overflow:auto;
+//}
 
 .choice {
   margin:5px 0;
