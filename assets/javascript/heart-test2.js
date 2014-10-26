@@ -33,4 +33,10 @@ $(document).ready(function(){
     $(".result").addClass("hidden");
     $result.removeClass("hidden");
   })
+
+  $("#reset").on("click",function(){
+    $(".part").addClass("hidden");
+    $("#part1").removeClass("hidden");
+    $("input[type='radio']").attr("checked",false);
+  })
 })
